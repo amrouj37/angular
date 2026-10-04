@@ -1,0 +1,22 @@
+.toggle { display: inline-flex; gap: .5rem; align-items: center; margin-bottom: 1rem; cursor: pointer; }
+.liste { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.conf { display: flex; flex-direction: column; gap: .5rem; }
+.entete { display: flex; justify-content: space-between; gap: .5rem; align-items: flex-start; }
+.entete h3 { font-size: 1rem; }
+p { margin: 0; }
+.meta { list-style: none; padding: 0; margin: 0; font-size: .92rem; }
+.meta li { padding: .1rem 0; }
+.badge { font-size: .75rem; font-weight: 700; padding: .15rem .55rem; border-radius: 999px; white-space: nowrap; color: #fff; }
+.badge.vert { background: var(--vert); }
+.badge.orange { background: var(--orange); }
+.badge.rouge { background: var(--rouge); }
+.jauge { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.remplissage { height: 100%; }
+.remplissage.disponible { background: var(--vert); }
+.remplissage.presque-complet { background: var(--orange); }
+.remplissage.complet { background: var(--rouge); }
+.btn-inscription { margin-top: auto; align-self: flex-start; }
+.btn-vert { background: var(--vert); }
+.btn-orange { background: var(--orange); }
+.btn-rouge { background: var(--rouge); opacity: 1 !important; }
+.vide { text-align: center; color: var(--muted); grid-column: 1 / -1; }

@@ -1,0 +1,51 @@
+<h1 class="page-title">Prosit 3 - Directives, contrôle de flux & pipes</h1>
+<p class="page-subtitle">Conférences à venir</p>
+
+<label class="toggle">
+  <input type="checkbox" [checked]="simulerListeVide()" (change)="simulerListeVide.set(!simulerListeVide())" />
+  Vider la liste (test)
+</label>
+
+<div class="liste">
+  @for (conf of conferencesAVenir(); track conf.id; let i = $index) {
+    <article class="card conf" appSurbrillance>
+      <div class="entete">
+        <h3>{{ i + 1 }}. {{ conf.title | uppercase }}</h3>
+
+        @switch (disponibilite(conf)) {
+          @case ('disponible') { <span class="badge vert">Disponible</span> }
+          @case ('presque-complet') { <span class="badge orange">Presque complet</span> }
+          @default { <span class="badge rouge">Complet</span> }
+        }
+      </div>
+
+      <p class="muted">{{ conf.description }}</p>
+
+      <ul class="meta">
+        <li>{{ conf.date | date: 'EEEE dd MMMM yyyy à HH:mm' }}</li>
+        <li>{{ conf.place }}</li>
+        <li>{{ conf.nbParticipants }} / {{ conf.maxParticipants }} - {{ conf | placesRestantes }}</li>
+      </ul>
+
+      <div class="jauge">
+        <div class="remplissage" [ngStyle]="{ width: tauxRemplissage(conf) + '%' }"
+             [ngClass]="disponibilite(conf)"></div>
+      </div>
+
+      <button
+        class="btn btn-inscription"
+        [ngClass]="{
+          'btn-vert': disponibilite(conf) === 'disponible',
+          'btn-orange': disponibilite(conf) === 'presque-complet',
+          'btn-rouge': disponibilite(conf) === 'complet'
+        }"
+        [disabled]="disponibilite(conf) === 'complet'"
+        (click)="sInscrire(conf)"
+      >
+        @if (disponibilite(conf) === 'complet') { Complet } @else { S'inscrire }
+      </button>
+    </article>
+  } @empty {
+    <p class="card vide">Aucune conférence à venir pour le moment.</p>
+  }
+</div>
