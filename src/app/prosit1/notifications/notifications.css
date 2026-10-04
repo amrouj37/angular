@@ -1,0 +1,4 @@
+.notif {
+  margin: .4rem 0; padding: .5rem .7rem;
+  background: var(--primary-light); border-radius: 6px; font-size: .92rem;
+}

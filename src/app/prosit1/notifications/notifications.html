@@ -1,0 +1,6 @@
+<section class="card">
+  <h3>Notifications</h3>
+  @for (notif of notifications; track notif.id) {
+    <p class="notif">{{ notif.message }}</p>
+  }
+</section>

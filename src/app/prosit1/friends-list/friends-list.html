@@ -1,0 +1,11 @@
+<section class="card">
+  <h3>Amis ({{ amis.length }})</h3>
+  <ul>
+    @for (ami of amis; track ami.id) {
+      <li>
+        <span class="statut" [class.en-ligne]="ami.enLigne"></span>
+        {{ ami.nom }}
+      </li>
+    }
+  </ul>
+</section>

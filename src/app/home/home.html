@@ -1,0 +1,12 @@
+<h1 class="page-title">Application de gestion des conférences</h1>
+<p class="page-subtitle">Prosits Angular - 2026/2027</p>
+
+<div class="grille">
+  @for (p of prosits; track p.num) {
+    <a class="card prosit" [routerLink]="p.chemin">
+      <span class="num">Prosit {{ p.num }}</span>
+      <h3>{{ p.titre }}</h3>
+      <p class="muted">{{ p.resume }}</p>
+    </a>
+  }
+</div>

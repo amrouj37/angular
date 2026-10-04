@@ -1,0 +1,5 @@
+<nav class="navbar">
+  @for (lien of liens; track lien.chemin) {
+    <a [routerLink]="lien.chemin" routerLinkActive="actif">{{ lien.libelle }}</a>
+  }
+</nav>

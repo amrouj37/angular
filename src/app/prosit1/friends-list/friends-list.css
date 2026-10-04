@@ -1,0 +1,4 @@
+ul { list-style: none; padding: 0; margin: 0; }
+li { display: flex; align-items: center; gap: .5rem; padding: .35rem 0; }
+.statut { width: 9px; height: 9px; border-radius: 50%; background: #bbb; }
+.statut.en-ligne { background: var(--vert); }

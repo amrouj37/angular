@@ -1,0 +1,7 @@
+.header {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .9rem 1.5rem;
+  background: var(--primary); color: #fff;
+}
+.app-name { display: block; font-size: 1.15rem; }
+.slogan { font-size: .85rem; opacity: .85; }
