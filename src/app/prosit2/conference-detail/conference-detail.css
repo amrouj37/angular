@@ -1,0 +1,12 @@
+.detail { display: flex; gap: 1.5rem; align-items: flex-start; }
+.detail img { border-radius: 12px; flex-shrink: 0; }
+.infos p { margin: .3rem 0; }
+.places { font-weight: 700; color: var(--vert); }
+.places.zero { color: var(--rouge); }
+.alerte { color: var(--rouge); font-weight: 600; }
+.succes { color: var(--vert); font-weight: 600; }
+.actions { display: flex; gap: .5rem; margin-top: .75rem; }
+.edition { margin-top: 1rem; }
+.edition label { display: block; margin: .75rem 0; }
+.edition input { display: block; margin-top: .35rem; }
+@media (max-width: 560px) { .detail { flex-direction: column; } }

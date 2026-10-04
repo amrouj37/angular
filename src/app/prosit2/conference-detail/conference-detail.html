@@ -1,0 +1,44 @@
+<h1 class="page-title">Prosit 2 - Data-binding & Signals</h1>
+<p class="page-subtitle">Détail de la conférence</p>
+
+<article class="card detail">
+  <img [src]="imageUrl()" [alt]="'Logo de ' + titre()" width="80" height="80" />
+
+  <div class="infos">
+    <h2>{{ titre() }}</h2>
+    <p><strong>Intervenant :</strong> {{ intervenant() }}</p>
+    <p><strong>Date :</strong> {{ date() | date: 'EEEE d MMMM y, HH:mm' }}</p>
+    <p><strong>Places disponibles :</strong> <span class="places" [class.zero]="complet()">{{ placesDisponibles() }}</span></p>
+
+    @if (complet()) {
+      <p class="alerte">Cette conférence est complète.</p>
+    } @else if (inscrit()) {
+      <p class="succes">Votre inscription est confirmée.</p>
+    }
+
+    <div class="actions">
+      <button class="btn" (click)="sInscrire()" [disabled]="complet() || inscrit()">
+        {{ libelleBouton() }}
+      </button>
+      @if (inscrit()) {
+        <button class="btn btn-outline" (click)="annulerInscription()">Annuler</button>
+      }
+    </div>
+  </div>
+</article>
+
+<section class="card edition">
+  <h3>Modifier le titre</h3>
+
+  <label>
+    Titre (ngModel)
+    <input type="text" [(ngModel)]="titre" />
+  </label>
+
+  <label>
+    Titre (value + input)
+    <input type="text" [value]="titre()" (input)="onTitreSaisi($event)" />
+  </label>
+
+  <p class="muted">{{ titre().length }} caractères</p>
+</section>

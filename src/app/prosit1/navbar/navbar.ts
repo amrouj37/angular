@@ -16,5 +16,6 @@ export class Navbar {
   readonly liens: LienMenu[] = [
     { libelle: 'Accueil', chemin: '/accueil' },
     { libelle: 'P1 · Profil', chemin: '/profil' },
+    { libelle: 'P2 · Data-binding', chemin: '/detail-conference' },
   ];
 }
