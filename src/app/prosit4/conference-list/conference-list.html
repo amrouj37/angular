@@ -1,0 +1,30 @@
+<h1 class="page-title">Prosit 4 - Communication entre composants imbriqués</h1>
+<p class="page-subtitle">Cliquer sur une conférence pour voir son détail.</p>
+
+@if (message()) {
+  <p class="message">{{ message() }}</p>
+}
+
+<div class="layout">
+  <section class="card">
+    <span class="etiquette">Conférences</span>
+    <ul class="liste">
+      @for (conf of conferences(); track conf.id) {
+        <li>
+          <button class="item" [class.actif]="conf.id === selectedId()" (click)="selectionner(conf)">
+            <strong>{{ conf.title }}</strong>
+            <span class="muted">{{ conf.date | date: 'dd/MM/yyyy' }} · {{ conf.nbParticipants }}/{{ conf.maxParticipants }}</span>
+          </button>
+        </li>
+      } @empty {
+        <li class="muted">Aucune conférence à venir.</li>
+      }
+    </ul>
+  </section>
+
+  <app-p4-conference-detail
+    [conference]="selected()"
+    (inscription)="onInscription($event)"
+    (fermer)="onFermer()"
+  />
+</div>

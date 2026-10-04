@@ -1,0 +1,22 @@
+<aside class="card detail">
+  @if (conference(); as conf) {
+    <div class="entete">
+      <span class="etiquette">Détail</span>
+      <button class="fermer" (click)="fermer.emit()" title="Fermer">X</button>
+    </div>
+    <h2>{{ conf.title | uppercase }}</h2>
+    <p class="muted">{{ conf.description }}</p>
+    <ul>
+      <li>{{ conf.date | date: 'EEEE d MMMM y à HH:mm' }}</li>
+      <li>{{ conf.place }}</li>
+      <li>{{ conf.nbParticipants }} / {{ conf.maxParticipants }} participants</li>
+      <li><strong>{{ placesRestantes() }}</strong> place(s) restante(s)</li>
+    </ul>
+    <button class="btn" [disabled]="placesRestantes() === 0" (click)="sInscrire()">
+      @if (placesRestantes() === 0) { Complet } @else { S'inscrire }
+    </button>
+  } @else {
+    <span class="etiquette">Détail</span>
+    <p class="vide">Sélectionnez une conférence dans la liste pour afficher son détail.</p>
+  }
+</aside>

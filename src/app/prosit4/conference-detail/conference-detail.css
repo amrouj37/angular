@@ -1,0 +1,8 @@
+.detail { border: 2px dashed var(--primary); position: sticky; top: 1rem; }
+.entete { display: flex; justify-content: space-between; align-items: center; }
+.etiquette { font-size: .75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
+.fermer { border: none; background: none; font-size: 1rem; cursor: pointer; color: var(--muted); }
+h2 { margin-top: .5rem; font-size: 1.15rem; }
+ul { list-style: none; padding: 0; margin: .75rem 0 1rem; }
+li { padding: .15rem 0; }
+.vide { color: var(--muted); margin: 1rem 0 0; }
