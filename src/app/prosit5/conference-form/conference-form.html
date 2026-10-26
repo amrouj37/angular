@@ -1,0 +1,41 @@
+<h1 class="page-title">{{ modeEdition ? 'Modifier la conférence #' + id() : 'Nouvelle conférence' }}</h1>
+
+<form class="card" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Titre
+    <input formControlName="title" />
+  </label>
+  @if (form.controls.title.invalid && form.controls.title.touched) {
+    <small class="err">Titre obligatoire (3 caractères min)</small>
+  }
+
+  <label>Description
+    <textarea formControlName="description" rows="3"></textarea>
+  </label>
+
+  <label>Date
+    <input type="date" formControlName="date" />
+  </label>
+
+  <label>Lieu
+    <input formControlName="place" />
+  </label>
+  @if (form.controls.place.invalid && form.controls.place.touched) {
+    <small class="err">Lieu obligatoire</small>
+  }
+
+  <div class="ligne">
+    <label>Places max
+      <input type="number" formControlName="maxParticipants" />
+    </label>
+    <label>Inscrits
+      <input type="number" formControlName="nbParticipants" />
+    </label>
+  </div>
+
+  <div class="actions">
+    <a class="btn btn-outline" routerLink="/api-conferences">Annuler</a>
+    <button class="btn" type="submit" [disabled]="form.invalid">
+      {{ modeEdition ? 'Enregistrer' : 'Ajouter' }}
+    </button>
+  </div>
+</form>

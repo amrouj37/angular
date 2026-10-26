@@ -19,5 +19,6 @@ export class Navbar {
     { libelle: 'P2 · Data-binding', chemin: '/detail-conference' },
     { libelle: 'P3 · Directives & pipes', chemin: '/conferences' },
     { libelle: 'P4 · Communication', chemin: '/communication' },
+    { libelle: 'P5 · HttpClient', chemin: '/api-conferences' },
   ];
 }

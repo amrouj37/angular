@@ -1,0 +1,31 @@
+{
+  "conferences": [
+    {
+      "id": 1,
+      "title": "Angular Signals en pratique",
+      "description": "Réactivité fine, computed, effects et migration depuis RxJS.",
+      "date": "2027-02-15",
+      "place": "Esprit - Bloc E, Amphi 1",
+      "maxParticipants": 120,
+      "nbParticipants": 64
+    },
+    {
+      "id": 2,
+      "title": "Cloud & DevSecOps",
+      "description": "Pipelines CI/CD sécurisés, conteneurs et bonnes pratiques cloud.",
+      "date": "2027-03-03",
+      "place": "Tunis - Cité des Sciences",
+      "maxParticipants": 80,
+      "nbParticipants": 74
+    },
+    {
+      "id": 3,
+      "title": "Architecture logicielle moderne",
+      "description": "Microservices, monolithe modulaire et Domain-Driven Design.",
+      "date": "2027-04-20",
+      "place": "Esprit - Salle de conférence",
+      "maxParticipants": 50,
+      "nbParticipants": 50
+    }
+  ]
+}

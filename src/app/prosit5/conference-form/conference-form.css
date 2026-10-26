@@ -1,0 +1,7 @@
+form { max-width: 520px; display: flex; flex-direction: column; gap: .75rem; }
+label { display: flex; flex-direction: column; gap: .25rem; font-weight: 600; flex: 1; }
+input, textarea { padding: .5rem .7rem; border: 1px solid var(--border); border-radius: 6px; font: inherit; }
+.ligne { display: flex; gap: 1rem; }
+.err { color: var(--rouge); }
+.actions { display: flex; justify-content: space-between; margin-top: .5rem; }
+a.btn { text-decoration: none; }

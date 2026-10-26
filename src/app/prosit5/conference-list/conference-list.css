@@ -1,0 +1,6 @@
+.barre { margin-bottom: 1rem; }
+.grille { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .75rem; }
+a.btn { text-decoration: none; display: inline-block; }
+.danger { background: var(--rouge); }
+.erreur { background: #ffebee; color: var(--rouge); padding: .6rem .9rem; border-radius: 8px; font-weight: 600; }

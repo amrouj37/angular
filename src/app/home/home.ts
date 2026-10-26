@@ -13,5 +13,6 @@ export class Home {
     { num: 2, titre: 'Data-binding & Signals', chemin: '/detail-conference', resume: 'Lier TypeScript et HTML avec les signals.' },
     { num: 3, titre: 'Directives, contrôle de flux & pipes', chemin: '/conferences', resume: 'Afficher, filtrer et formater une liste.' },
     { num: 4, titre: 'Communication entre composants', chemin: '/communication', resume: 'input() / output() entre parent et enfant.' },
+    { num: 5, titre: 'HttpClient & web services', chemin: '/api-conferences', resume: 'CRUD sur un backend json-server.' },
   ];
 }

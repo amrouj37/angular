@@ -1,0 +1,16 @@
+@if (conference.isLoading()) {
+  <p class="muted">Chargement...</p>
+}
+@if (conference.error()) {
+  <p class="erreur">Conférence introuvable</p>
+}
+@if (conference.hasValue()) {
+  <article class="card">
+    <h1>{{ conference.value().title }}</h1>
+    <p>{{ conference.value().description }}</p>
+    <p class="muted">📅 {{ conference.value().date | date: 'fullDate' }}</p>
+    <p class="muted">📍 {{ conference.value().place }}</p>
+    <p class="muted">👥 {{ conference.value().nbParticipants }}/{{ conference.value().maxParticipants }}</p>
+  </article>
+}
+<p><a routerLink="/api-conferences">← Retour à la liste</a></p>

@@ -1,0 +1,29 @@
+<h1 class="page-title">Prosit 5 - HttpClient & web services</h1>
+<p class="page-subtitle">CRUD sur json-server ({{ service.count() }} conférences)</p>
+
+<div class="barre">
+  <a class="btn" routerLink="/api-conferences/ajout">+ Ajouter</a>
+</div>
+
+@if (service.loading()) {
+  <p class="muted">Chargement...</p>
+} @else if (service.error()) {
+  <p class="erreur">{{ service.error() }}</p>
+} @else {
+  <div class="grille">
+    @for (conf of service.conferences(); track conf.id) {
+      <article class="card">
+        <h3>{{ conf.title }}</h3>
+        <p class="muted">{{ conf.date | date: 'dd/MM/yyyy' }} · {{ conf.place }}</p>
+        <p class="muted">{{ conf.nbParticipants }}/{{ conf.maxParticipants }} participants</p>
+        <div class="actions">
+          <a class="btn btn-outline" [routerLink]="['/api-conferences', conf.id]">Détail</a>
+          <a class="btn btn-outline" [routerLink]="['/api-conferences', conf.id, 'modifier']">Modifier</a>
+          <button class="btn danger" (click)="supprimer(conf.id)">Supprimer</button>
+        </div>
+      </article>
+    } @empty {
+      <p class="muted">Aucune conférence.</p>
+    }
+  </div>
+}
